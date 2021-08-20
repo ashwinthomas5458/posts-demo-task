@@ -8,6 +8,9 @@
 body{
     background-color: #eee!important;
 }
+body,a,input,button{
+    font-family: 'Poppins', sans-serif;
+}
 .c-main-wrapper{
     min-height: 100vh;
 }
