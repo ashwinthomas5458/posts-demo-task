@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Demo</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="c-main-wrapper container-fluid p-0 d-flex flex-column justify-content-between">
+        <header class="c-nav-bar position-fixed container-fluid py-4 c-shadow-small">
+            <div class="container">
+                <a href="/" class="c-nav-icon">
+                    Post Demo
+                </a>
+            </div>
+        </header>
+        <div class="container-fluid mt-5">
+            <div class="container pt-5">
+                <div class="container px-0">
+                    <div class="row">
+                        <div class="col-md-6 py-2">
+                            <h1 class="my-auto">All Posts</h1>
+                        </div>
+                        <div class="col-md-6 py-2">
+                            <div class="w-100 d-flex justify-content-end">
+                                <button class="c-p-btn c-add-btn">
+                                    Add New Post
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container px-0 c-all-posts pt-4" id="postsContainer">
+                    <!-- <div class="row">
+                        <div class="col-md-10 col-lg-8 py-3">
+                            <div class="c-post w-100 p-5 c-shadow-large">
+                                <div class="c-post-head d-flex align-items-center mb-4">
+                                    <span class="c-user-icon d-flex align-items-center justify-content-center c-shadow-small">
+                                        <img src="./images/useIcon.svg" alt="User Icon">
+                                    </span>
+                                    <h3 class="ps-4 mb-0">User Name</h3>
+                                </div>
+                                <div class="w-100 c-post-body d-flex flex-column">
+                                    <div class="w-100 c-post-text">
+                                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p>
+                                    </div>
+                                    <div class="c-image-container container px-0">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-8">
+                                                <img src="https://static.tumblr.com/58d9c77e9619492c680de2a9772bcb51/txjgy5i/2HNoujzqj/tumblr_static_tumblr_static__focused_v3.gif" alt="gif" class="c-gif w-100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="container py-5 d-flex flex-column align-items-center c-no-data">
+                        <img src="./images/noData.svg" alt="" class="pt-3">
+                        <p class="mb-4">No posts found! Add new post to begin.</p>
+                    </div>
+
+                    <!-- <div class="container d-flex align-items-center justify-content-center py-2 c-loader-wrapper">
+                        <span class="c-loader d-flex"></span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="modal c-modal fade" id="addPostModal" tabindex="-1" aria-labelledby="addPostModalLabel">
+            <div class="modal-dialog">
+              <div class="modal-content c-shadow-small p-4">
+                <div class="modal-header"> 
+                  <h5 class="modal-title" id="addPostModalLabel">Add New Post</h5>
+                  <button type="button" class="btn-close c-btn-close" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="container px-0 pt-3 d-flex flex-column">
+                    <div class="c-input-wrapper w-100 py-2 d-flex flex-column">
+                        <label class="mb-2">Content</label>
+                        <textarea class="py-2 px-2" name="post-content" id="postContent" rows="4"></textarea>
+                    </div>
+                    <div class="c-gifs-wrapper w-100 d-flex flex-column py-2">              
+                        <div class="c-input-wrapper pb-3 w-100 d-flex flex-column d-none">
+                            <label class="mb-2">Enter text to search</label>
+                            <input class="py-2 px-2" type="text" name="post-content" id="gifText">
+                        </div>   
+                        <div class="h-100 px-0 container c-add-gif" id="gifContainer">
+                            <p class="mb-0">Add Gif</p>
+                            <span>+</span>
+                        </div>                           
+
+                        <!-- <div class="h-100 px-0 c-gifs-container container" id="gifContainer">
+                            <div class="row mx-0">
+                                <div class="col-4 p-2 c-gif-option position-relative">
+                                    <span class="d-flex position-absolute c-tick-icon"></span>
+                                    <img src="https://static.tumblr.com/58d9c77e9619492c680de2a9772bcb51/txjgy5i/2HNoujzqj/tumblr_static_tumblr_static__focused_v3.gif" alt="">
+                                </div>
+                                <div class="col-4 p-2 c-gif-option position-relative">
+                                    <span class="d-flex position-absolute c-tick-icon"></span>
+                                    <img src="https://static.tumblr.com/58d9c77e9619492c680de2a9772bcb51/txjgy5i/2HNoujzqj/tumblr_static_tumblr_static__focused_v3.gif" alt="">
+                                </div>
+                                <div class="col-4 p-2 c-gif-option position-relative">
+                                    <span class="d-flex position-absolute c-tick-icon"></span>
+                                    <img src="https://static.tumblr.com/58d9c77e9619492c680de2a9772bcb51/txjgy5i/2HNoujzqj/tumblr_static_tumblr_static__focused_v3.gif" alt="">
+                                </div>
+                                <div class="col-4 p-2 c-gif-option position-relative">
+                                    <span class="d-flex position-absolute c-tick-icon"></span>
+                                    <img src="https://static.tumblr.com/58d9c77e9619492c680de2a9772bcb51/txjgy5i/2HNoujzqj/tumblr_static_tumblr_static__focused_v3.gif" alt="">
+                                </div>
+                                <div class="col-4 p-2 c-gif-option position-relative">
+                                    <span class="d-flex position-absolute c-tick-icon"></span>
+                                    <img src="https://static.tumblr.com/58d9c77e9619492c680de2a9772bcb51/txjgy5i/2HNoujzqj/tumblr_static_tumblr_static__focused_v3.gif" alt="">
+                                </div>
+                                <div class="col-4 p-2 c-gif-option position-relative">
+                                    <span class="d-flex position-absolute c-tick-icon"></span>
+                                    <img src="https://static.tumblr.com/58d9c77e9619492c680de2a9772bcb51/txjgy5i/2HNoujzqj/tumblr_static_tumblr_static__focused_v3.gif" alt="">
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <button class="c-p-btn align-self-end mt-4" id="createGifBtn">Create</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <footer class="container-fluid py-4 d-flex justify-content-center c-footer c-shadow-small">
+            Post Demo Page.
+        </footer>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>
